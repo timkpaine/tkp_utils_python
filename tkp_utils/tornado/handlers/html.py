@@ -13,8 +13,7 @@ def get_kwargs(handler, template_kwargs):
 
 class HTMLOpenHandler(ServerHandler):
     def initialize(self, context=None, template=None, template_kwargs=None, **kwargs):
-        super(HTMLOpenHandler, self).initialize(**context)
-        self.template = template
+        super(HTMLOpenHandler, self).initialize(template=template, **context)
         self.template_kwargs = template_kwargs or {}
 
     def get(self, *args):
