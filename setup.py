@@ -7,6 +7,7 @@ pjoin = os.path.join
 here = os.path.abspath(os.path.dirname(__file__))
 name = 'tkp_utils'
 
+
 def get_version(file, name='__version__'):
     path = os.path.realpath(file)
     version_ns = {}
@@ -21,6 +22,7 @@ with open(pjoin(here, 'README.md'), encoding='utf-8') as f:
 
 requires = [
     'jinja2>=2.10',
+    'sqlalchemy>=1.3.0',
     'tornado>=6.0.3',
     'ujson>=1.35',
 ]
