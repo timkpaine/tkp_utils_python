@@ -29,7 +29,7 @@ requires = [
 
 requires_dev = [
     'flake8>=3.7.8',
-    'mock',
+    'mock>=3.0.5',
     'pybind11>=2.4.0',
     'pytest>=4.3.0',
     'pytest-cov>=2.6.1',
