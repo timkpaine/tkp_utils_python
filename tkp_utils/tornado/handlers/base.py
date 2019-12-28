@@ -5,6 +5,7 @@ import ujson
 from concurrent.futures import ThreadPoolExecutor
 from contextlib import contextmanager
 from jinja2 import Environment, FileSystemLoader, TemplateNotFound
+from ...sqla.models import User, APIKey
 from ...web import parse_body
 
 
@@ -145,8 +146,8 @@ class ServerHandler(tornado.web.RequestHandler):
 
     def initialize(self,
                    sessionmaker=None,
-                   UserSQLClass=None,
-                   APIKeySQLClass=None,
+                   UserSQLClass=User,
+                   APIKeySQLClass=APIKey,
                    user_id_field='id',
                    apikey_id_field='id',
                    user_apikeys_field='apikeys',
