@@ -23,6 +23,8 @@ class RegisterHandler(ServerHandler):
         if self.is_admin:
             with self.session() as session:
                 self.write(ujson.dumps(session.query(self.user_sql_class).all()))
+        else:
+            self._set_401("Unauthorized to view all clients")
 
     @tornado.gen.coroutine
     def post(self):
