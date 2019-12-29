@@ -19,14 +19,7 @@ class TestLogout:
     def test_LogoutHandler(self):
         req = MagicMock()
         req.body = ''
-        context = {'clients': {1234: ''},
-                   'competitions': {},
-                   'leaderboards': {},
-                   'submissions': {},
-                   'stash': [],
-                   'all_clients': MagicMock(),
-                   'all_competitions': MagicMock(),
-                   'all_submissions': MagicMock(),
+        context = {'users': {1234: ''},
                    'sessionmaker': MagicMock()}
 
         x = LogoutHandler(self.app, req, **context)

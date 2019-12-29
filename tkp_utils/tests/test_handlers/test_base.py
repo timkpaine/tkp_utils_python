@@ -3,14 +3,7 @@ from tkp_utils.tornado.handlers.base import ServerHandler
 from mock import MagicMock
 from tornado.web import HTTPError
 
-CONTEXT = {'clients': {},
-           'competitions': {},
-           'leaderboards': {},
-           'submissions': {},
-           'stash': [],
-           'all_clients': MagicMock(),
-           'all_competitions': MagicMock(),
-           'all_submissions': MagicMock(),
+CONTEXT = {'users': {},
            'sessionmaker': MagicMock()}
 
 

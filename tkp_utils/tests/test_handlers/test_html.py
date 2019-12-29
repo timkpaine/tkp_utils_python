@@ -5,14 +5,7 @@ from tkp_utils.tornado.handlers import HTMLHandler, HTMLOpenHandler
 from mock import MagicMock
 from tornado.web import HTTPError
 
-context = {'clients': {},
-           'competitions': {},
-           'leaderboards': {},
-           'submissions': {},
-           'stash': [],
-           'all_clients': MagicMock(),
-           'all_competitions': MagicMock(),
-           'all_submissions': MagicMock(),
+context = {'users': {},
            'sessionmaker': MagicMock()}
 
 

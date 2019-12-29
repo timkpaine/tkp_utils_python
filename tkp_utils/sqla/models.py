@@ -16,7 +16,7 @@ class User(Base):
 
     _email = Column("email", String, nullable=False, unique=True)
 
-    apikeys = relationship('APIKey', back_populates='client')
+    apikeys = relationship('APIKey', back_populates='user')
     admin = Column(Boolean, default=False)
 
     @hybrid_property

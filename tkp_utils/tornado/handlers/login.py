@@ -5,7 +5,7 @@ from ...web import parse_body
 
 
 class LoginHandler(ServerHandler):
-    def on_login(self, client):
+    def on_login(self, user):
         pass
 
     @tornado.gen.coroutine
