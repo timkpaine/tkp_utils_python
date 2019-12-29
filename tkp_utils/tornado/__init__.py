@@ -11,29 +11,29 @@ from .handlers import ServerHandler, \
 
 
 def make_application(
-    # Server settings
-    port='8080',
-    debug=False,
-    assets_dir=os.path.join(os.path.dirname(__file__), 'assets'),
-    static_dir=os.path.join(os.path.dirname(__file__), 'assets', 'static'),
-    cookie_secret='',
-    # Handler settings
-    basepath='/',
-    apipath='/api/v1/',
-    wspath='ws:0.0.0.0:{port}/',
-    sqlalchemy_sessionmaker=None,
-    UserSQLClass=None,
-    APIKeySQLClass=None,
-    user_id_field='id',
-    apikey_id_field='id',
-    user_apikeys_field='apikeys',
-    apikey_user_field='user',
-    user_admin_field='admin',
-    user_admin_value=True,
-    # extras
-    extra_handlers=None,
-    extra_context=None,
-    api_revision='v1'):
+        # Server settings
+        port='8080',
+        debug=False,
+        assets_dir=os.path.join(os.path.dirname(__file__), 'assets'),
+        static_dir=os.path.join(os.path.dirname(__file__), 'assets', 'static'),
+        cookie_secret='',
+        # Handler settings
+        basepath='/',
+        apipath='/api/v1/',
+        wspath='ws:0.0.0.0:{port}/',
+        sqlalchemy_sessionmaker=None,
+        UserSQLClass=None,
+        APIKeySQLClass=None,
+        user_id_field='id',
+        apikey_id_field='id',
+        user_apikeys_field='apikeys',
+        apikey_user_field='user',
+        user_admin_field='admin',
+        user_admin_value=True,
+        # extras
+        extra_handlers=None,
+        extra_context=None,
+        api_revision='v1'):
 
     extra_handlers = extra_handlers or []
     extra_context = extra_context or {}
