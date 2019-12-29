@@ -1,4 +1,3 @@
-import pandas as pd
 import six
 import secrets
 import ujson
