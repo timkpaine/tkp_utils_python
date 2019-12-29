@@ -25,7 +25,6 @@ requires = [
     'sqlalchemy>=1.3.0',
     'tornado>=6.0.3',
     'ujson>=1.35',
-    'validators>=0.12.4'
 ]
 
 requires_dev = [
