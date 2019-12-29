@@ -31,9 +31,10 @@ def make_application(
     user_admin_field='admin',
     user_admin_value=True,
     # extras
-                     extra_handlers=None,
-                     extra_context=None,
-                     api_revision='v1'):
+    extra_handlers=None,
+    extra_context=None,
+    api_revision='v1'):
+
     extra_handlers = extra_handlers or []
     extra_context = extra_context or {}
 
@@ -57,7 +58,6 @@ def make_application(
     default_handlers = extra_handlers + [
         (r"/", HTMLOpenHandler, {'template': 'index.html', 'context': context}),
         (r"/index.html", HTMLOpenHandler, {'template': 'index.html', 'context': context}),
-        (r"/home", HTMLOpenHandler, {'template': 'home.html', 'context': context}),
         (r"/api/{}/login".format(api_revision), LoginHandler, context),
         (r"/api/{}/logout".format(api_revision), LogoutHandler, context),
         (r"/api/{}/register".format(api_revision), RegisterHandler, context),
@@ -67,7 +67,13 @@ def make_application(
     ]
 
     for _, handler, handler_kwargs in extra_handlers:
-        if issubclass(handler, ServerHandler):
+        if issubclass(handler, HTMLOpenHandler):
+            if 'context' in handler_kwargs:
+                handler_kwargs['context'].update(context)
+            else:
+                handler_kwargs['context'] = context
+
+        elif issubclass(handler, ServerHandler):
             handler_kwargs.update(context)
 
     settings = {
